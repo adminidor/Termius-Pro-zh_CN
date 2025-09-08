@@ -152,7 +152,7 @@ jobs:
           file_prefix=$(get_platform_prefix "${{ inputs.platform }}")
 
           # 处理发布列表
-          RELEASE_LIST=${{ vars.RELEASE_LIST || 'l,lk,lt' }}
+          RELEASE_LIST=${{ vars.RELEASE_LIST || 'tk,ts,tks' }}
           echo "RELEASE_LIST: $RELEASE_LIST"
           IFS=',' read -r -a release_list <<< "$RELEASE_LIST"
 

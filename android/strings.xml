@@ -531,7 +531,6 @@
   <string name="default_string">默认</string>
   <string name="default_target_button_title">设为默认目标</string>
   <string name="default_targets_button_title">设为默认目标</string>
-  <string name="default_team_vault_name">团队</string>
   <string name="default_user_login_placeholder">termius@crystalnix.com</string>
   <string name="default_web_client_id">320401657078-fmfl43k1ro9uoi4piqprke6en9esj3h2.apps.googleusercontent.com</string>
   <string name="delete">删除</string>
@@ -2204,6 +2203,7 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_key_logout">logout_settings</string>
   <string name="settings_key_logs_storage_screen">settings_key_logs_storage_screen</string>
   <string name="settings_key_logs_storage_screen_title">日志存储</string>
+  <string name="settings_key_normal_input_type_in_terminal">use_normal_input_type_in_terminal</string>
   <string name="settings_key_notication_category">notification_cateogry</string>
   <string name="settings_key_notification">notification</string>
   <string name="settings_key_parse_history">parse_history_permission</string>
@@ -2234,9 +2234,11 @@ echo '$3' &gt;&gt; "$1/$2";</string>
   <string name="settings_login_title">登录</string>
   <string name="settings_logout_title">退出登录</string>
   <string name="settings_never">永不</string>
+  <string name="settings_normal_input_type_in_terminal_summary">支持语音输入及中日韩语言（CJK）</string>
+  <string name="settings_normal_input_type_in_terminal_title">键盘支持（实验功能）</string>
   <string name="settings_notification_category_title">通知</string>
   <string name="settings_notification_icon_summary">自定义或禁用活动连接显示</string>
-  <string name="settings_notification_icon_summary_allow">后台显示活动连接所需</string>
+  <string name="settings_notification_icon_summary_allow">后台显示活动连接所需的权限</string>
   <string name="settings_notification_icon_title">更改通知设置</string>
   <string name="settings_notification_icon_title_allow">启用通知</string>
   <string name="settings_null_apikey_title">账户设置</string>

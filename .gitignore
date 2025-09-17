@@ -10,3 +10,4 @@ debug.js
 *.apk
 *.apkm
 *.jar
+*/.tmp_dir

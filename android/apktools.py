@@ -407,7 +407,7 @@ def replace_language_xml(source_dir, target_dir):
     if not os.path.exists(source_dir):
         raise Exception(f"Failed to replace {LANGUAGE_XML}, source file not found: {source_dir}")
     src_xml = os.path.join(source_dir, LANGUAGE_XML)
-    tar_xml = os.path.join(target_dir, 'resources', 'package_1', 'res', 'values', LANGUAGE_XML)
+    tar_xml = os.path.join(target_dir, 'resources', 'package_1', 'res', 'values-zh-rCN', LANGUAGE_XML)
     logger.info(f"Replacing language file: Source={src_xml}, Target={tar_xml}")
     replace_file(src_xml, tar_xml)
 

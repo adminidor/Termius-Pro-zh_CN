@@ -625,9 +625,6 @@ Leave your feedback"|留下你的反馈"
 "Thank you for the feedback"|"感谢你的反馈！"
 "We are glad to hear that you enjoy using Termius! Would you leave us a review?"|"我们很高兴听到你很享受使 Termius ! 你能给我们留下评论吗?"
 "Leave a review"|"留下评论"
-"You're up-to-date!|"你是最新的
-"Check back later for updates and notifications"|"稍后检查更新和通知"
-"Checking for updates"|"正在检查更新"
 "New Forwarding"|"新建端口转发"
 singular:"package"|singular:"包"
 plural:"packages"|plural:"包"
@@ -641,7 +638,7 @@ text:`Are you sure you want to remove |text:`你确定要删除
 
 "Choose where to store credentials"|"选择存储证书的位置"
 "Select how your teammates will access the items"," "|"选择你的成员如何访问"
-[N(o),"."]|[N(o),"的项目."]
+/vaultName,children:\[(\w+?)\((\w+?)\),"\."\]/|vaultName,children:[\g<1>(\g<2>),"的项目."]
 
 "creating at"|"创建于"
 "moving to"|"移动到"
@@ -764,8 +761,6 @@ singular:"known host",plural:"known hosts"|singular:"已知主机",plural:"已�
 /`\${([^}]+)} to`/|`${\g<1>}到`
 /`\${([^}]+)} \${([^}]+)} to ?`/|`${\g<1>} ${\g<2>} 到`
 "Something went wrong!"|"出错了!"
-children:"CHANGELOG"|children:"更新日志"
-children:"RESTART"|children:"重启"
 title:`Change ${|title:`修改${
 label:`Old ${|label:`旧${
 label:`New ${|label:`新${
@@ -944,9 +939,7 @@ children:"Broadcast"|children:"广播"
 children:"Broadcast input"|children:"广播输入"
 "Run in all tabs"|"在所有标签页中运行"
 "View more"|"查看更多"
-"Checking for updates..."|"正在检查更新..."
-"Termius update is ready!"|"Termius 更新已准备就绪！"
-/`The \${\((?P<e>\w+?)==null\?void 0:(?P=e)\.version\)\?\?"new"} version of Termius is ready to be installed\. Click the ”Restart” button to apply the changes and restart the app\.`/|`Termius 的${(\g<e>==null?void 0:\g<e>.version)??"新"}版本已准备好安装. 单击“重启”按钮应用更改并重新启动应用程序.`
+
 "Invalid Configuration: Missing Region"|"配置无效: 缺少区域"
 
 "1 session is disconnected"|"1 个会话已断开"
@@ -1126,6 +1119,7 @@ children:"Personal"|children:"个人"
 name:"Personal"|name:"个人"
 title:"Team"|title:"团队"
 
+"Create Workspace Template":"Update Workspace Template"|"创建工作区模板":"更新工作区模板"
 placeholder:"New Workspace"|placeholder:"新建工作区"
 "Workspace Template"|"工作区模板"
 "Workspace templates"|"工作区模板"
@@ -1326,3 +1320,11 @@ children:"You"|children:"你"
 "You've got remote control. Start typing."|"你已获得远程控制权限，开始输入吧。"
 "Start typing..."|"开始输入..."
 "Too many attempts. Try again later."|"尝试太多了，稍后再试。"
+"Post-Quantum Key Exchange"|"后量子密钥交换"
+"Turn off if you're experiencing issues with legacy devices"|"如果使用旧设备时遇到问题，请关闭"
+"Checking for notifications..."|"正在检查通知..."
+"No notifications"|"无通知"
+"Restart and update"|"重启并更新"
+"Trial Expiring Soon"|"试用即将到期"
+children:"Manage plans"|children:"管理计划"
+children:"Confirm access"|children:"确认访问"

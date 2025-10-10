@@ -28,8 +28,16 @@ update_hash() {
 	} else {
 		return
 	}
-	local key_path="ElectronAsarIntegrity.Resources/appA_DOT_WAS_HEREasar.hash"
-	plutil -replace "$key_path" -string "$hash" "$info_path"
+	[[ -f "$info_path" ]] || return
+  exists() { /usr/libexec/PlistBuddy -c "Print $1" "$info_path" >/dev/null 2>&1 }
+	exists ":ElectronAsarIntegrity" || { /usr/libexec/PlistBuddy -c "Add :ElectronAsarIntegrity dict" "$info_path"; }
+	exists ":ElectronAsarIntegrity:Resources\/app.asar" || { /usr/libexec/PlistBuddy -c "Add :ElectronAsarIntegrity:Resources\/app.asar dict" "$info_path"; }
+	exists ":ElectronAsarIntegrity:Resources\/app.asar:algorithm" || { /usr/libexec/PlistBuddy -c "Add :ElectronAsarIntegrity:Resources\/app.asar:algorithm string SHA256" "$info_path"; }
+	if exists ":ElectronAsarIntegrity:Resources\/app.asar:hash"; then
+		/usr/libexec/PlistBuddy -c "Set :ElectronAsarIntegrity:Resources\/app.asar:hash $hash" "$info_path"
+  else
+		/usr/libexec/PlistBuddy -c "Add :ElectronAsarIntegrity:Resources\/app.asar:hash string $hash" "$info_path"
+  fi
 	echo "Edited: $info_path"
 	if [[ "${bundle:e}" == "app" && -d "$bundle/Contents/Frameworks" ]] {
 		for i ($bundle/Contents/Frameworks/*) {

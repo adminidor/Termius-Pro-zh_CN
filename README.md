@@ -56,6 +56,7 @@ python lang.py --find "term1" "term2"
 | `--style`         | `-s` | 样式修改     | `python lang.py -ls`                |
 | `--restore`       | `-r` | 还原操作     | `python lang.py -r`                 |
 | `--find <关键词...>` | `-f` | 多条件联合搜索  | `python lang.py -f "term1" "term2"` |
+| `--find extract` | 无 | 提取所有可能的字符串 | `python lang.py --find extract` |
 
 ## 📂 规则文件结构
 
@@ -65,6 +66,9 @@ rules/
 ├── localize.txt   # 汉化规则(-l/--localize时加载)
 ├── skip_login.txt # 登录跳过规则(-k/--skip-login时加载)
 └── style.txt      # 样式修改规则(-s/--style时加载)
+extract/
+├── app.asar.unpack #解包出的所有文件
+└── allstring.txt   #所有可能的字符串
 ```
 
 ## 🤷 手动汉化
@@ -121,6 +125,13 @@ rules/
    # 运行脚本
    python apktools.py
    ```
+
+## 📖 常见问题
+
+1. ModuleNotFoundError: No module named 'tkinter'
+    - 缺少 tkinter 模块，请确保已安装 tkinter 模块。
+2. PermissionError: [Errno 13] Permission denied: '***/resources/app.asar.bak'
+    - 请检查权限，确保当前用户有`resources`目录写入权限。
 
 ## 🔔 注意事项
 

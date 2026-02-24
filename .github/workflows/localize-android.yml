@@ -26,6 +26,17 @@ jobs:
           sudo apt install -y zipalign
           sudo apt install -y apksigner
 
+      - name: Get Version
+        id: version
+        run: |
+          cd android
+          version=$(python apktools.py --version)
+          if [ -z "$version" ]; then
+            version="0.0.0"
+          fi
+          echo "::notice::Termius.apk version: $version"
+          echo "version=$version" >> $GITHUB_OUTPUT
+
       - name: Run script
         run: |
           cd android
@@ -43,15 +54,6 @@ jobs:
 
           python apktools.py
 
-      - name: Get Version
-        id: version
-        run: |
-          version=$(curl -s -A "Mozilla/5.0" "https://www.apkmirror.com/apk/termius-corporation/termius-ssh-telnet-client/" | grep -oP 'Termius - Modern SSH Client \K\d+\.\d+\.\d+' | head -n 1)
-          if [ -z "$version" ]; then
-            version="0.0.0"
-          fi
-          echo "::notice::Termius.apk version: $version"
-          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4

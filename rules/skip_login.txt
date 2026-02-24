@@ -2,10 +2,11 @@
 /didUserSeeSuggestionToTryPremium:.*?,set/|didUserSeeSuggestionToTryPremium:()=>{return !0},set
 /return \w+.user.account.pro_mode/|return !0
 /(iconType:"vault-tab",onClick:\(\)=>){[^}]+,(\w+)\(\)}/|\g<1>{\g<2>()}
-/let ([^=]+)="/account";(return )[\S\s]*?push\(\{title:"Account",path:"/account"\}\),/|let \g<1>="/terminal";\g<2>
+/let ([^=]+)="/account";(return )[\S\s]*?push\(\{title:"Account",path:{value:"/account"\}}\),/|let \g<1>="/terminal";\g<2>
 /children:\[(?P<m>(?P<l>\w+\(\w+,)\S*?)(?P=l)[^)]+"Documentation"[\S\s]*"Changelog"}\),/|children:[\g<m>
 /,\.\.\.[\w$]+\([\w$]+,\[{name:[\w$]+!=null&&[\w$]+\.isMultiplayer\?[\w$]+:"Start multiplayer",onClick:\(\)=>{[\w$]+\({actionName:"share"}\)},icon:[^\]]+}\]\),/|,
 ==="vault-tab"|==="index-tab"
+/\[(?P<n>\w+?)\.ENABLE_SYNC,(?P=n)\.ENABLE_SHARING,(?P=n)\.ENABLE_RETENTION,(?P<t>\w+?)\.ENABLE_SYNC_OVER_SIZE_LIMIT,(?P=t)\.UNAUTHORIZED_SETUP_VAULT,(?P=t)\.UNAUTHORIZED_OVER_SIZE_LIMIT\]/|[]
 api.termius.com|localhost
 sentry.io|localhost
 split.io|localhost

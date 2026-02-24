@@ -4,10 +4,12 @@ out
 gen
 debug.js
 *.properties
-*.jks
 *.keystore
 *.log
 *.apk
 *.apkm
 *.jar
 */.tmp_dir
+*/keystore
+.vscode/
+extract/
